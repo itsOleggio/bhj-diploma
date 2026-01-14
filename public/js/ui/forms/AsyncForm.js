@@ -14,7 +14,7 @@ class AsyncForm {
    * */
   constructor(element) {
     if (!element) {
-      throw new Error('Нет такого элемента');
+      throw new Error("Нет такого элемента");
     }
     this.element = element;
     this.registerEvents();
@@ -25,7 +25,7 @@ class AsyncForm {
    * вызывает метод submit()
    * */
   registerEvents() {
-    this.element.addEventListener('submit', (e) => {
+    this.element.addEventListener("submit", (e) => {
       e.preventDefault();
       this.submit();
     });
@@ -49,9 +49,7 @@ class AsyncForm {
     return data;
   }
 
-  onSubmit(options) {
-    
-  }
+  onSubmit(options) {}
 
   /**
    * Вызывает метод onSubmit и передаёт туда

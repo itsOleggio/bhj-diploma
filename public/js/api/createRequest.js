@@ -3,25 +3,20 @@
  * на сервер.
  * */
 const createRequest = (options = {}) => {
-  const {
-    url,
-    method = 'GET',
-    data,
-    callback
-  } = options;
+  const { url, method = "GET", data, callback } = options;
 
   const xhr = new XMLHttpRequest();
-  xhr.responseType = 'json';
+  xhr.responseType = "json";
 
   let finalUrl = url;
   let body = null;
 
-  if (method === 'GET' && data) {
+  if (method === "GET" && data) {
     const params = new URLSearchParams(data).toString();
     finalUrl += `?${params}`;
   }
 
-  if (method !== 'GET' && data) {
+  if (method !== "GET" && data) {
     body = new FormData();
     for (const key in data) {
       body.append(key, data[key]);
@@ -39,7 +34,7 @@ const createRequest = (options = {}) => {
   };
 
   xhr.onerror = () => {
-    callback?.(new Error('Network error'));
+    callback?.(new Error("Network error"));
   };
   xhr.send(body);
 };

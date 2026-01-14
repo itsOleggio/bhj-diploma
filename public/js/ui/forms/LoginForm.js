@@ -4,7 +4,7 @@
  * */
 
 class LoginForm extends AsyncForm {
-    /**
+  /**
    * Производит авторизацию с помощью User.login
    * После успешной авторизации, сбрасывает форму,
    * устанавливает состояние App.setState( 'user-logged' ) и
@@ -16,9 +16,9 @@ class LoginForm extends AsyncForm {
         return;
       }
 
-      App.setState('user-logged');
+      App.setState("user-logged");
       this.element.reset();
-      App.getModal('login').close();
+      App.getModal("login").close();
     });
   }
 }
