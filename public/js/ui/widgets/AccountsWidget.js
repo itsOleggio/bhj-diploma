@@ -19,7 +19,7 @@ class AccountsWidget {
     }
     this.element = element;
     this.registerEvents();
-    // this.update();
+    this.update();
   }
 
   /**
